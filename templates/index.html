@@ -412,18 +412,6 @@
 
         <div class="categorias">
 
-            <!-- TODOS -->
-
-            <a
-                href="/"
-                class="{% if categoria_atual == 'Todos' %}categoria-ativa{% endif %}"
-            >
-                Todos
-            </a>
-
-
-            <!-- OUTRAS CATEGORIAS -->
-
             {% for categoria in categorias %}
 
                 <a
@@ -468,13 +456,13 @@
 
                     <p class="preco">
 
-                        R$ {{ "%.2f"|format(produto.preco) }}
+                        R$ {{ "%.2f"|format(produto.preco)|replace(".", ",") }}
 
                     </p>
 
 
                     <a
-                        href="/adicionar/{{ produto.id }}"
+                        href="{{ url_for('adicionar', produto_id=produto.id) }}"
                         class="btn-comprar"
                     >
 
@@ -500,7 +488,9 @@
     <footer>
 
         <p>
-             <strong>Endereço: Avenida das Araras N°: 1400 - Nova Mutum - Mato Grosso</strong>
+            <strong>
+                Endereço: Avenida das Araras N°: 1400 - Nova Mutum - Mato Grosso
+            </strong>
         </p>
 
 
