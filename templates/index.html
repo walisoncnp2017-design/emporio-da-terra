@@ -18,15 +18,10 @@
 
 
         body {
-
             margin: 0;
-
             font-family: Arial, sans-serif;
-
             background: #f5f6f8;
-
             color: #222;
-
         }
 
 
@@ -35,98 +30,78 @@
         ========================= */
 
         .topo {
-
             background: #252525;
-
             color: white;
-
             padding: 18px 40px;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             box-shadow: 0 3px 12px rgba(0,0,0,0.2);
-
         }
 
 
         .logo {
-
             display: flex;
-
             align-items: center;
-
             gap: 12px;
-
         }
 
 
         .logo h2 {
-
             margin: 0;
-
             font-size: 25px;
-
         }
 
 
         .carrinho {
-
             display: flex;
-
             align-items: center;
-
             gap: 15px;
+        }
 
+
+        .carrinho a {
+            color: white;
+            text-decoration: none;
         }
 
 
         .limpar {
-
             background: #e53935;
-
             color: white;
-
             padding: 9px 15px;
-
             border-radius: 7px;
-
             text-decoration: none;
-
             transition: 0.2s;
-
         }
 
 
         .limpar:hover {
-
             background: #c62828;
-
         }
 
 
         /* =========================
            BANNER
         ========================= */
-        .banner {
-    width: 100%;
-    height: 360px;
-    overflow: hidden;
-    background: #00351f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
-}
+        .banner {
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+            background: #00351f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            display: block;
+        }
 
 
         /* =========================
@@ -134,27 +109,58 @@
         ========================= */
 
         .titulo {
-
             text-align: center;
-
             margin: 45px 0 30px;
-
         }
 
 
         .titulo h2 {
-
             font-size: 32px;
-
             margin-bottom: 8px;
-
         }
 
 
         .titulo p {
-
             color: #777;
+        }
 
+
+        /* =========================
+           CATEGORIAS
+        ========================= */
+
+        .categorias {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+            padding: 0 20px;
+        }
+
+
+        .categorias a {
+            background: white;
+            color: #333;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 25px;
+            border: 2px solid #28a745;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+
+        .categorias a:hover {
+            background: #28a745;
+            color: white;
+        }
+
+
+        .categorias .categoria-ativa {
+            background: #28a745;
+            color: white;
         }
 
 
@@ -163,11 +169,8 @@
         ========================= */
 
         .vitrine {
-
             max-width: 1200px;
-
             margin: auto;
-
             padding: 0 25px 60px;
 
             display: grid;
@@ -176,7 +179,6 @@
                 repeat(auto-fit, minmax(240px, 1fr));
 
             gap: 28px;
-
         }
 
 
@@ -185,47 +187,35 @@
         ========================= */
 
         .produto {
-
             background: white;
-
             border-radius: 15px;
-
             overflow: hidden;
 
             box-shadow:
                 0 4px 15px rgba(0,0,0,0.08);
 
             transition: 0.3s;
-
             text-align: center;
-
         }
 
 
         .produto:hover {
-
             transform: translateY(-8px);
 
             box-shadow:
                 0 12px 25px rgba(0,0,0,0.15);
-
         }
 
 
         /* =========================
-           FOTO
+           FOTO DO PRODUTO
         ========================= */
 
         .produto img {
-
             width: 100%;
-
             height: 230px;
-
             object-fit: cover;
-
             display: block;
-
         }
 
 
@@ -234,65 +224,43 @@
         ========================= */
 
         .produto-info {
-
             padding: 20px;
-
         }
 
 
         .produto h3 {
-
             font-size: 20px;
-
             margin: 5px 0 15px;
-
         }
 
 
         .preco {
-
             color: #0a9f35;
-
             font-size: 25px;
-
             font-weight: bold;
-
             margin: 10px 0 20px;
-
         }
 
 
         /* =========================
-           BOTÃO
+           BOTÃO COMPRAR
         ========================= */
 
         .btn-comprar {
-
             display: block;
-
             background: #28a745;
-
             color: white;
-
             padding: 13px;
-
             border-radius: 8px;
-
             text-decoration: none;
-
             font-weight: bold;
-
             transition: 0.2s;
-
         }
 
 
         .btn-comprar:hover {
-
             background: #218838;
-
             transform: scale(1.03);
-
         }
 
 
@@ -301,22 +269,15 @@
         ========================= */
 
         footer {
-
             background: #252525;
-
             color: white;
-
             text-align: center;
-
             padding: 30px;
-
         }
 
 
         footer p {
-
             margin: 7px;
-
         }
 
 
@@ -327,37 +288,39 @@
         @media (max-width: 600px) {
 
             .topo {
-
                 padding: 15px;
-
             }
 
 
             .logo h2 {
-
                 font-size: 19px;
+            }
 
+
+            .carrinho {
+                gap: 8px;
+                font-size: 14px;
+            }
+
+
+            .limpar {
+                padding: 7px 10px;
             }
 
 
             .banner {
-
                 height: 280px;
-
             }
 
 
-            .banner h1 {
-
-                font-size: 32px;
-
+            .categorias {
+                gap: 8px;
             }
 
 
-            .banner p {
-
-                font-size: 16px;
-
+            .categorias a {
+                padding: 9px 15px;
+                font-size: 14px;
             }
 
         }
@@ -370,7 +333,9 @@
 <body>
 
 
-    <!-- TOPO -->
+    <!-- =========================
+         TOPO
+    ========================= -->
 
     <header class="topo">
 
@@ -385,13 +350,15 @@
 
         <div class="carrinho">
 
-            <span>
+            <a href="/carrinho">
 
-                🛍️ Itens no Carrinho:
+                🛒 Carrinho
 
-                <strong>{{ total_itens }}</strong>
+                <strong>
+                    ({{ total_itens }})
+                </strong>
 
-            </span>
+            </a>
 
 
             {% if total_itens > 0 %}
@@ -410,85 +377,115 @@
 
 
 
-    <!-- BANNER -->
+    <!-- =========================
+         BANNER
+    ========================= -->
 
     <section class="banner">
-    <img src="{{ url_for('static', filename='imagens/loja.jpg') }}" alt="Empório da Terra">
-</section>
 
-
-    <!-- TITULO -->
-
-    <section class="titulo">
-
-        <h2>
-
-            Nossos Produtos
-
-        </h2>
-
-
-        <p>
-
-            Confira nossos produtos
-
-        </p>
+        <img
+            src="{{ url_for('static', filename='imagens/loja.jpg') }}"
+            alt="Empório da Terra"
+        >
 
     </section>
 
 
 
-    <!-- PRODUTOS -->
+    <!-- =========================
+         TITULO E CATEGORIAS
+    ========================= -->
+
+    <section class="titulo">
+
+        <h2>
+            Nossos Produtos
+        </h2>
+
+
+        <p>
+            Confira nossos produtos
+        </p>
+
+
+        <!-- CATEGORIAS -->
+
+        <div class="categorias">
+
+            <!-- TODOS -->
+
+            <a
+                href="/"
+                class="{% if categoria_atual == 'Todos' %}categoria-ativa{% endif %}"
+            >
+                Todos
+            </a>
+
+
+            <!-- OUTRAS CATEGORIAS -->
+
+            {% for categoria in categorias %}
+
+                <a
+                    href="/?categoria={{ categoria }}"
+                    class="{% if categoria_atual == categoria %}categoria-ativa{% endif %}"
+                >
+                    {{ categoria }}
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRODUTOS
+    ========================= -->
 
     <div class="vitrine">
 
         {% for produto in lista_produtos %}
 
-        <div class="produto">
+            <div class="produto">
 
 
-            <img
-
-                src="{{ url_for('static', filename='imagens/' + produto.imagem) }}"
-
-                alt="{{ produto.nome }}"
-
-            >
-
-
-            <div class="produto-info">
-
-
-                <h3>
-
-                    {{ produto.nome }}
-
-                </h3>
-
-
-                <p class="preco">
-
-                    R$ {{ produto.preco }}
-
-                </p>
-
-
-                <a
-
-                    href="/adicionar/{{ produto.id }}"
-
-                    class="btn-comprar"
-
+                <img
+                    src="{{ url_for('static', filename='imagens/' + produto.imagem) }}"
+                    alt="{{ produto.nome }}"
                 >
 
-                    🛒 Comprar
 
-                </a>
+                <div class="produto-info">
 
+
+                    <h3>
+                        {{ produto.nome }}
+                    </h3>
+
+
+                    <p class="preco">
+
+                        R$ {{ "%.2f"|format(produto.preco) }}
+
+                    </p>
+
+
+                    <a
+                        href="/adicionar/{{ produto.id }}"
+                        class="btn-comprar"
+                    >
+
+                        🛒 Comprar
+
+                    </a>
+
+
+                </div>
 
             </div>
-
-        </div>
 
         {% endfor %}
 
@@ -496,28 +493,24 @@
 
 
 
-    <!-- RODAPÉ -->
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
 
     <footer>
 
         <p>
-
-            🛒 <strong>Bem Vindo</strong>
-
+             <strong>Endereço: Avenida das Araras N°: 1400 - Nova Mutum - Mato Grosso</strong>
         </p>
 
 
         <p>
-
             Obrigado pela sua visita!
-
         </p>
 
 
         <p>
-
             © 2026 - Todos os direitos reservados
-
         </p>
 
     </footer>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Carrinho - Empório da Terra-MT</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #222;
+        }
+
+
+        /* ================================
+           TOPO
+        ================================= */
+
+        .topo {
+            background: #252525;
+            height: 83px;
+            padding: 8px 20px;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+
+        /* ================================
+           MINI BANNER
+        ================================= */
+
+        .mini-banner {
+            width: 180px;
+            height: 65px;
+
+            border-radius: 8px;
+            overflow: hidden;
+
+            display: block;
+            text-decoration: none;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+            transition: 0.2s;
+        }
+
+
+        .mini-banner:hover {
+            transform: scale(1.03);
+        }
+
+
+        .mini-banner img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* ================================
+           CONTAINER
+        ================================= */
+
+        .container {
+            max-width: 1000px;
+
+            margin: 40px auto;
+
+            padding: 0 20px;
+        }
+
+
+        /* ================================
+           TÍTULO
+        ================================= */
+
+        h1 {
+            text-align: center;
+
+            margin: 0 0 30px 0;
+
+            font-size: 30px;
+
+            color: #222;
+        }
+
+
+        /* ================================
+           ITEM
+        ================================= */
+
+        .item {
+            background: white;
+
+            padding: 20px;
+
+            margin-bottom: 15px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* ================================
+           INFORMAÇÕES
+        ================================= */
+
+        .item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+
+        .item-info h3 {
+            margin: 0 0 8px 0;
+
+            font-size: 19px;
+
+            color: #222;
+        }
+
+
+        .preco {
+            color: #0a9f35;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        /* ================================
+           QUANTIDADE
+        ================================= */
+
+        .quantidade {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin: 0 20px;
+        }
+
+
+        .quantidade a {
+            text-decoration: none;
+
+            background: #28a745;
+
+            color: white;
+
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 6px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .quantidade a:hover {
+            background: #218838;
+        }
+
+
+        .quantidade span {
+            font-size: 18px;
+
+            font-weight: bold;
+
+            min-width: 25px;
+
+            text-align: center;
+        }
+
+
+        /* ================================
+           SUBTOTAL
+        ================================= */
+
+        .subtotal {
+            min-width: 120px;
+
+            text-align: right;
+        }
+
+
+        .subtotal strong {
+            font-size: 17px;
+
+            color: #222;
+        }
+
+
+        /* ================================
+           LIXEIRA
+        ================================= */
+
+        .lixeira {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: transparent !important;
+
+            border: none;
+
+            padding: 0;
+
+            margin-top: 10px;
+
+            font-size: 23px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .lixeira:hover {
+            transform: scale(1.15);
+
+            background: transparent !important;
+        }
+
+
+        /* ================================
+           TOTAL
+        ================================= */
+
+        .total {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            margin-top: 25px;
+
+            text-align: right;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .total h2 {
+            margin: 0;
+
+            color: #0a9f35;
+
+            font-size: 25px;
+        }
+
+
+        /* ================================
+           AVISO
+        ================================= */
+
+        .aviso-frete {
+            margin-top: 20px;
+
+            padding: 15px 18px;
+
+            background: #fff8e1;
+
+            border: 1px solid #f0b84b;
+
+            border-radius: 8px;
+
+            color: #6b5200;
+
+            text-align: left;
+
+            line-height: 1.5;
+
+            font-size: 14px;
+        }
+
+
+        .aviso-frete strong {
+            color: #5a4300;
+        }
+
+
+        /* ================================
+           FINALIZAR
+        ================================= */
+
+        .finalizar {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background: #25D366;
+
+            color: white;
+
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 17px;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .finalizar:hover {
+            background: #1ebe5d;
+        }
+
+
+        /* ================================
+           CARRINHO VAZIO
+        ================================= */
+
+        .vazio {
+            background: white;
+
+            padding: 50px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .vazio h2 {
+            margin-top: 0;
+        }
+
+
+        .vazio a {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background: #28a745;
+
+            color: white;
+
+            padding: 12px 25px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+        }
+
+
+        .vazio a:hover {
+            background: #218838;
+        }
+
+
+        /* ================================
+           CELULAR
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .topo {
+                height: 70px;
+
+                padding: 7px 12px;
+            }
+
+
+            .mini-banner {
+                width: 140px;
+
+                height: 52px;
+            }
+
+
+            .container {
+                margin: 25px auto;
+
+                padding: 0 12px;
+            }
+
+
+            h1 {
+                font-size: 25px;
+
+                margin-bottom: 25px;
+            }
+
+
+            .item {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+
+                padding: 20px 15px;
+            }
+
+
+            .item-info {
+                width: 100%;
+            }
+
+
+            .item-info h3 {
+                font-size: 18px;
+            }
+
+
+            .preco {
+                font-size: 17px;
+            }
+
+
+            .quantidade {
+                margin: 0;
+            }
+
+
+            .subtotal {
+                min-width: auto;
+
+                text-align: center;
+            }
+
+
+            .total {
+                text-align: center;
+
+                padding: 20px 15px;
+            }
+
+
+            .total h2 {
+                font-size: 22px;
+            }
+
+
+            .aviso-frete {
+                text-align: left;
+            }
+
+
+            .finalizar {
+                width: 100%;
+
+                text-align: center;
+
+                font-size: 16px;
+            }
+
+
+            .vazio {
+                padding: 40px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         TOPO
+    ================================= -->
+
+    <header class="topo">
+
+        <a
+            href="{{ url_for('home') }}"
+            class="mini-banner"
+            title="Voltar para a loja"
+        >
+
+            <img
+                src="{{ url_for('static', filename='imagens/loja.jpg') }}"
+                alt="Empório da Terra-MT"
+            >
+
+        </a>
+
+    </header>
+
+
+    <!-- ================================
+         CONTEÚDO
+    ================================= -->
+
+    <main class="container">
+
+
+        <h1>
+            Meu Carrinho
+        </h1>
+
+
+        {% if itens %}
+
+
+            <!-- ============================
+                 PRODUTOS
+            ============================= -->
+
+            {% for item in itens %}
+
+
+            <div class="item">
+
+
+                <!-- ========================
+                     NOME DO PRODUTO
+                ========================= -->
+
+                <div class="item-info">
+
+                    <h3>
+
+                        {{ item.produto.nome.split('-', 1)[1].strip()
+                           if '-' in item.produto.nome
+                           else item.produto.nome }}
+
+                    </h3>
+
+
+                    <span class="preco">
+
+                        R$
+
+                        {{ "%.2f"|format(item.produto.preco)|replace(".", ",") }}
+
+                    </span>
+
+                </div>
+
+
+                <!-- ========================
+                     QUANTIDADE
+                ========================= -->
+
+                <div class="quantidade">
+
+
+                    <!-- DIMINUIR -->
+
+                    <a
+                        href="{{ url_for('diminuir', produto_id=item.produto.id) }}"
+                        title="Diminuir quantidade"
+                    >
+
+                        −
+
+                    </a>
+
+
+                    <!-- QUANTIDADE -->
+
+                    <span>
+
+                        {{ item.quantidade }}
+
+                    </span>
+
+
+                    <!-- AUMENTAR -->
+
+                    <!--
+                        IMPORTANTE:
+                        origem=carrinho faz o Flask
+                        permanecer no carrinho.
+                    -->
+
+                    <a
+                        href="{{ url_for('adicionar', produto_id=item.produto.id, origem='carrinho') }}"
+                        title="Aumentar quantidade"
+                    >
+
+                        +
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- ========================
+                     SUBTOTAL
+                ========================= -->
+
+                <div class="subtotal">
+
+
+                    <strong>
+
+                        R$
+
+                        {{ "%.2f"|format(item.subtotal)|replace(".", ",") }}
+
+                    </strong>
+
+
+                    <br>
+
+
+                    <!-- LIXEIRA SEM RETÂNGULO -->
+
+                    <a
+                        href="{{ url_for('remover', produto_id=item.produto.id) }}"
+                        class="lixeira"
+                        title="Remover produto"
+                    >
+
+                        🗑️
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+            <!-- ============================
+                 TOTAL
+            ============================= -->
+
+            <div class="total">
+
+
+                <h2>
+
+                    Total:
+
+                    R$
+
+                    {{ "%.2f"|format(total)|replace(".", ",") }}
+
+                </h2>
+
+
+                <!-- ========================
+                     AVISO FRETE
+                ========================= -->
+
+                <div class="aviso-frete">
+
+                    ⚠️
+
+                    <strong>Atenção:</strong>
+
+                    o valor apresentado no carrinho corresponde aos
+                    produtos selecionados.
+
+
+                    <br>
+
+
+                    O valor final do pedido poderá ser alterado devido ao
+
+                    <strong>
+                        frete, entrega ou distância do endereço.
+                    </strong>
+
+
+                    <br>
+
+
+                    O valor da entrega será confirmado no momento da
+                    finalização do pedido pelo WhatsApp.
+
+                </div>
+
+
+                <!-- ========================
+                     WHATSAPP
+                ========================= -->
+
+                <form
+                    action="{{ url_for('enviar_pedido') }}"
+                    method="POST"
+                    style="margin: 0;"
+                >
+
+                    <button
+                        type="submit"
+                        class="finalizar"
+                    >
+
+                        🟢 Finalizar pedido pelo WhatsApp
+
+                    </button>
+
+                </form>
+
+
+            </div>
+
+
+        {% else %}
+
+
+            <!-- ============================
+                 CARRINHO VAZIO
+            ============================= -->
+
+            <div class="vazio">
+
+
+                <h2>
+
+                    Seu carrinho está vazio
+
+                </h2>
+
+
+                <p>
+
+                    Adicione alguns produtos para começar sua compra.
+
+                </p>
+
+
+                <a href="{{ url_for('home') }}">
+
+                    Ver produtos
+
+                </a>
+
+
+            </div>
+
+
+        {% endif %}
+
+
+    </main>
+
+
+</body>
+
+</html>
